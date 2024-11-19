@@ -1,37 +1,34 @@
 import random
-wordlist = ['agriculture', 'language', 'country', 'state', 'zip', 'association', 'bananas', 'clown']
 
+word_list = ['aardvark', 'baboon', 'camel']
 
-word = random.choice(wordlist)
-print (word)
+chosen_word = random.choice(word_list)
+print(chosen_word)
 
 
 placeholder = ""
+game_over = False
+display = ''
+list = []
 
-for i in range(len(word)):
+word_length = len(chosen_word)
+for i in range(word_length): 
     placeholder += "_"
-
-print(placeholder)
   
-display = ""
-correct_letters = []
-gameover = False
-while gameover != True:
-    guess = input("Guess a letter").lower()
-
-    for i in word:
-        if i == guess:
-             
-            correct_letters.append(guess)
-        
-        elif i in correct_letters:
-            display += i
+print(placeholder)
+while game_over == False:
+    guess = input("Guess a letter: ").lower()
+    
+    display = ''
+    for letter in chosen_word:
+        if letter == guess:
+            display += guess
+            list.append(letter)
+        elif letter in list:
+            display += letter
+            
         else:
+            
             display += "_"
-        
+            
     print(display)
-    
-    
-    if display == word:
-        print("Congratulations, you guessed the word!")
-        gameover = True 
