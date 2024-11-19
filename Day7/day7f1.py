@@ -28,7 +28,10 @@ while game_over == False:
             display += letter
             
         else:
-            
             display += "_"
+            
+        if "_" not in display:
+            print("Congratulations, you've won!, The word was " + display)
+            game_over = True
             
     print(display)
