@@ -17,24 +17,21 @@ for i in range(word_length):
   
 print(placeholder)
 
-while game_over == False:
+while not game_over:
     guess = input("Guess a letter: ").lower()
-    
-    
     for letter in chosen_word:
         if letter == guess:
-            display += guess
-            list.append(letter)
+            display += letter
+            list.append(guess)
         elif letter in list:
             display += letter
-            
         else:
             display += "_"
-            
-    if "_" not in display:
-        print("Congratulations, you've won!, The word was " + display)
-        game_over = True
-            
-    print(display)
 
-
+if "_" not in display:
+    print("Congratulations! You've won the game!")
+    game_over = True
+print(display)
+    
+    
+ 
