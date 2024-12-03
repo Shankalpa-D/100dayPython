@@ -8,7 +8,7 @@ print(chosen_word)
 
 placeholder = ""
 game_over = False
-display = ''
+display = ""
 list = []
 
 word_length = len(chosen_word)
@@ -16,10 +16,11 @@ for i in range(word_length):
     placeholder += "_"
   
 print(placeholder)
+
 while game_over == False:
     guess = input("Guess a letter: ").lower()
     
-    display = ''
+    
     for letter in chosen_word:
         if letter == guess:
             display += guess
@@ -30,8 +31,10 @@ while game_over == False:
         else:
             display += "_"
             
-        if "_" not in display:
-            print("Congratulations, you've won!, The word was " + display)
-            game_over = True
+    if "_" not in display:
+        print("Congratulations, you've won!, The word was " + display)
+        game_over = True
             
     print(display)
+
+
