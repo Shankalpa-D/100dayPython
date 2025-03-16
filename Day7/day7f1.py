@@ -28,8 +28,8 @@ while not game_over:
         else:
             display += "_"
 
-if "_" not in display:
-    print("Congratulations! You've won the game!")
+    if "_" not in display:
+        print("Congratulations! You've won the game!")
     game_over = True
 print(display)
     
